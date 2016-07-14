@@ -19,6 +19,10 @@ window.onload = function(){
 
   // ADD THE attributesEnter HERE!
   // var attributesEnter = ;
+  var attributesEnter = [{color: 'red', r: 40, cx: 100},  //example line
+                  {color: 'pink', r: 50, cx: 50},
+                  {color: 'blue', r: 20, cx: 200},
+                  {color: 'purple', r: 10, cx: 100}];
 
   var zoom = d3.behavior.zoom()
                       .scaleExtent([1, 5])
@@ -37,10 +41,11 @@ window.onload = function(){
                           .attr('cy', '50px');
 
   // ADD THE attributesExit HERE! Remember to repeat at least one of the elements of attributesEnter
+
   // var attributesExit = ;
   //
-  // svgCircles.selectAll('circle')
-  //             .data(attributesExit)
-  //             .exit()
-  //             .attr("fill", changeColor);
+  svgCircles.selectAll('circle')
+              .data(attributesExit)
+              .exit()
+              .attr("fill", changeColor);
 };
